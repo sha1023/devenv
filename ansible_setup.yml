@@ -1,0 +1,8 @@
+- name: Installation script for all the local goodies
+  hosts: localhost
+
+  tasks:
+    - apt:
+        name: jq
+    - apt:
+        name: vim
