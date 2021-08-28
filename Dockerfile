@@ -37,6 +37,7 @@ RUN ansible-playbook /home/vagrant/ansible_setup.yml
 
 # Copy Bash aliases:
 COPY bash_aliases /home/vagrant/.bash_aliases
+RUN chown vagrant /home/vagrant/.bash_aliases
 
 # Run bash to keep container up indefinitely
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
