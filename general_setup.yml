@@ -10,11 +10,11 @@
         name: vim
     - name: install ssh
       apt:
-        name: ssh 
+        name: ssh
         install_recommends: no
     - name: install sudo
       apt:
-        name: sudo 
+        name: sudo
         install_recommends: no
     - name: install git
       apt:

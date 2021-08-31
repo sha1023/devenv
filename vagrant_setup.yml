@@ -4,12 +4,12 @@
   tasks:
     - name: install ssh
       apt:
-        name: ssh 
+        name: ssh
         install_recommends: no
 
     - name: install sudo
       apt:
-        name: sudo 
+        name: sudo
         install_recommends: no
 
     - name: create vagrant user
@@ -23,7 +23,7 @@
             - sudo
 
     - name: steal root profile
-      copy: 
+      copy:
         remote_src: yes
         dest: /home/vagrant/.profile
         src: /root/.profile
@@ -31,7 +31,7 @@
         owner: vagrant
 
     - name: steal root bashrc
-      copy: 
+      copy:
         remote_src: yes
         dest: /home/vagrant/.bashrc
         src: /root/.bashrc
@@ -47,7 +47,7 @@
     - name: no password for vagrant sudo
       lineinfile:
         path: /etc/sudoers.d/vagrant
-        line: "vagrant ALL = NOPASSWD: ALL" 
+        line: "vagrant ALL = NOPASSWD: ALL"
         create: yes
         mode: 0440
 
@@ -56,7 +56,7 @@
         path: /home/vagrant
         state: directory
         owner: vagrant
-        recurse: yes 
+        recurse: yes
         group: vagrant
 
     - name: mkdir /var/run/ssshd

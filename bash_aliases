@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 echo sourcing ${BASH_SOURCE[0]}
 
@@ -28,7 +28,7 @@ function ebash() {
     if [ -z $1 ]
     then
         vim ${BASH_SOURCE[0]}
-    else 
+    else
         local SearchTerm
         SearchTerm="${PrefixRegexForFunctions}$1\|${PrefixRegexForAliases}$1"
         local SearchResults

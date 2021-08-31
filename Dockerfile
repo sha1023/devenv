@@ -12,11 +12,11 @@ RUN pip3 install ansible
 
 # vagrant setup
 COPY vagrant_setup.yml /root/vagrant_setup.yml
-RUN ansible-playbook /root/vagrant_setup.yml  
+RUN ansible-playbook /root/vagrant_setup.yml
 
 # Copy and run general utilities playbook:
 COPY general_setup.yml /root/general_setup.yml
-RUN ansible-playbook /root/general_setup.yml  
+RUN ansible-playbook /root/general_setup.yml
 
 # Copy Bash aliases:
 COPY bash_aliases /home/vagrant/.bash_aliases
