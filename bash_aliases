@@ -44,10 +44,12 @@ function ebash() {
 }
 complete -A function -A alias ebash
 
-# Git aliases
+### Edit VIMRC
+alias evimrc="vim ${HOME}/.vimrc"
+
+### Git aliases
 alias gs='git status'
 alias gb='git branch'
 alias gc='git checkout'
 alias ga='git add -A'
 alias gd='git diff --color'
-
