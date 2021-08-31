@@ -16,3 +16,6 @@
       apt:
         name: sudo 
         install_recommends: no
+    - name: install git
+      apt:
+        name: git-all
