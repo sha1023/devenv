@@ -6,10 +6,13 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure("2") do |config|
-  config.vm.provider "docker" do |d|
-    #d.remains_running = false
-    d.build_dir = "."
-    d.has_ssh = true
+  config.vm.define "devenv" do |devenv|
+      devenv.vm.hostname = "devenv"
+      devenv.vm.provider "docker" do |d|
+        #d.remains_running = false
+        d.build_dir = "."
+        d.has_ssh = true
+    end
     #d.image ="stephan:vm"
   end
   # The most common configuration options are documented and commented below.
