@@ -9,6 +9,8 @@ Also assumes you've install vagrant. I highly recommend installing vagrant's vag
 
 first time:
 ```vagrant up```
+
+to login:
 ```vagrant ssh```
 
 To pause:
