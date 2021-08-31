@@ -8,3 +8,11 @@
     - name: install vim
       apt:
         name: vim
+    - name: install ssh
+      apt:
+        name: ssh 
+        install_recommends: no
+    - name: install sudo
+      apt:
+        name: sudo 
+        install_recommends: no
