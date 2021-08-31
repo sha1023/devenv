@@ -11,7 +11,7 @@ RUN apt-get -y install python3 python3-nacl python3-pip libffi-dev
 RUN pip3 install ansible
 
 
-# Copy and run Ansible Playbook:
+# Copy and run general utilities playbook:
 COPY general_setup.yml /root/general_setup.yml
 RUN ansible-playbook /root/general_setup.yml  
 
@@ -23,6 +23,10 @@ RUN ansible-playbook /root/vagrant_setup.yml
 COPY bash_aliases /home/vagrant/.bash_aliases
 RUN chown vagrant /home/vagrant/.bash_aliases
 RUN chgrp vagrant /home/vagrant/.bash_aliases
+
+COPY vimrc /home/vagrant/.vimrc
+RUN chown vagrant /home/vagrant/.vimrc
+RUN chgrp vagrant /home/vagrant/.vimrc
 
 EXPOSE 2222
 
