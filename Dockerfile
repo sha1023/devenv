@@ -22,6 +22,7 @@ RUN ansible-playbook /home/vagrant/vagrant_setup.yml
 # Copy Bash aliases:
 COPY bash_aliases /home/vagrant/.bash_aliases
 RUN chown vagrant /home/vagrant/.bash_aliases
+RUN chgrp vagrant /home/vagrant/.bash_aliases
 
 EXPOSE 2222
 
