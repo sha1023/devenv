@@ -53,3 +53,9 @@ alias gb='git branch'
 alias gc='git checkout'
 alias ga='git add -A'
 alias gd='git diff --color'
+
+### History binds
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+bind '"\eOA": history-search-backward'
+bind '"\eOB": history-search-forward'
