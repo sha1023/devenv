@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
         d.build_dir = "."
         d.has_ssh = true
     end
+       devenv.vm.network "forwarded_port", guest: 5000, host: 55000, host_ip: "127.0.0.1"
     #d.image ="stephan:vm"
   end
   # The most common configuration options are documented and commented below.
