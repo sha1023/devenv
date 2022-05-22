@@ -59,3 +59,8 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 bind '"\eOA": history-search-backward'
 bind '"\eOB": history-search-forward'
+
+if [ -f ${HOME}/toolbox/bash_aliases ]; then
+    source ${HOME}/toolbox/bash_aliases
+fi
+

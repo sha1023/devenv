@@ -5,16 +5,22 @@
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
+HOME = ENV["HOME"]
+MOUNT_DIR = ENV["MOUNT_DIR"] || nil
 Vagrant.configure("2") do |config|
-  config.vm.define "devenv" do |devenv|
-      devenv.vm.hostname = "devenv"
-      devenv.vm.provider "docker" do |d|
-        #d.remains_running = false
-        d.build_dir = "."
-        d.has_ssh = true
-    end
-       devenv.vm.network "forwarded_port", guest: 5000, host: 55000, host_ip: "127.0.0.1"
-    #d.image ="stephan:vm"
+    config.vm.define "devenv" do |devenv|
+        devenv.vm.hostname = "devenv"
+        devenv.vm.provider "docker" do |d|
+            d.build_dir = "."
+            d.has_ssh = true
+        end
+        devenv.vm.synced_folder HOME + "/vagrant_toolbox", "/home/vagrant/toolbox"
+        devenv.vm.synced_folder HOME + "/.aws", "/home/vagrant/.aws"
+        unless MOUNT_DIR.nil?
+            devenv.vm.synced_folder MOUNT_DIR, "/home/vagrant/" + File.basename(MOUNT_DIR)
+        end
+        devenv.vm.network "forwarded_port", guest: 5000, host: 55000, host_ip: "127.0.0.1"
+        config.ssh.forward_agent = true
   end
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at

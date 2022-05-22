@@ -5,6 +5,7 @@
     - name: install jq
       apt:
         name: jq
+        update_cache: yes
     - name: install vim
       apt:
         name: vim
@@ -19,3 +20,6 @@
     - name: install git
       apt:
         name: git-all
+    - name: install ag
+      apt:
+        name: silversearcher-ag
