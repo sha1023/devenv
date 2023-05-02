@@ -23,3 +23,8 @@
     - name: install ag
       apt:
         name: silversearcher-ag
+    - name: Install npm
+      apt:
+        name: npm
+        state: present
+        update_cache: yes

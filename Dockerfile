@@ -1,5 +1,5 @@
 # TODO Newest ubuntu... will need to match the machines used by the company
-FROM ubuntu:impish-20210722
+FROM ubuntu:jammy
 
 # TODO What timezone?
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
