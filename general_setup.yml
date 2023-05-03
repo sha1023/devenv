@@ -28,7 +28,6 @@
         name: npm
         state: present
         update_cache: yes
-            - name: install curl
     - name: install curl
       apt:
         name: curl
